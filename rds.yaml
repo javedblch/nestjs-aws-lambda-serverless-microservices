@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  UsersDatabase:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      AllocatedStorage: 20
+      DBInstanceClass: db.t3.micro
+      DBInstanceIdentifier: usersapi
+      PubliclyAccessible: true
+      StorageType: gp2
+      MasterUsername: xxx # change
+      MasterUserPassword: xxx # change
+      Engine: mysql
+      EngineVersion: 8.0.28

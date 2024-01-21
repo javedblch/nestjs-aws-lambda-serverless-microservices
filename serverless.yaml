@@ -1,0 +1,19 @@
+service: users-api
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-jetpack
+
+provider:
+  name: aws
+  runtime: nodejs18.x # or your current node version
+  region: us-east-1 # or your region
+
+functions:
+  api:
+    handler: dist/lambda_api.handler
+    events:
+      - http:
+          method: any
+          path: /{proxy+}
